@@ -20,8 +20,9 @@ export function isSongInPlaylist(playlist, song) {
  */
 export function isAllEven(numbers) {
   // TODO
+  if (numbers.length === 0) return undefined;
+  return numbers.every((num) => num % 2 === 0);
 }
-
 /**
  * You're in charge of a group camping trip. You've packed supplies in a backpack,
  * and each item in the backpack has a category, such as "food", "equipment", or "clothes".
@@ -32,5 +33,7 @@ export function isAllEven(numbers) {
  * @returns {boolean} whether there is enough food in the backpack to feed everyone
  */
 export function haveEnoughFood(backpack, people) {
-  // TODO
+  const foodItems = backpack.filter(item => item.category === "food").length;
+  return foodItems >= people;
 }
+
